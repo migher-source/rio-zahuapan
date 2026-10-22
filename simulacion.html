@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Río Zahuapan</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<style>
+
+
+p{
+
+text-align: justify;
+
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #050505;
+    color: white;
+}
+
+
+/* NAVEGACIÓN */
+
+.navegacion {
+    overflow: hidden;
+    background-color: black;
+}
+
+.navegacion a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navegacion a:hover {
+    background-color: #6B6255;
+}
+
+
+/* SECCIÓN PRINCIPAL */
+
+.informacion-contaminacion {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 50px auto;
+    padding: 40px;
+
+    background-color: rgba(20, 20, 20, 0.92);
+
+    border-radius: 20px;
+}
+
+
+/* TÍTULOS */
+
+h1 {
+    text-align: center;
+
+    color: #d8cbb8;
+
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    text-align: center;
+
+    color: #cccccc;
+
+    margin-bottom: 40px;
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor-informacion {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.6fr 1fr;
+
+    gap: 30px;
+
+    align-items: stretch;
+}
+
+
+/* PANELES */
+
+.opciones,
+.informacion-principal,
+.datos {
+
+    padding: 25px;
+
+    background-color: #171717;
+
+    border-radius: 15px;
+}
+
+
+/* PANEL DE OPCIONES */
+
+.opciones h2 {
+    color: #d8cbb8;
+
+    margin-top: 0;
+}
+
+
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #292929;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+select:focus {
+    outline: 2px solid #6B6255;
+}
+
+
+/* INFORMACIÓN CENTRAL */
+
+.informacion-principal {
+
+    min-height: 500px;
+
+}
+
+.informacion-principal h2 {
+
+    color: #d8cbb8;
+
+    margin-top: 0;
+
+    font-size: 27px;
+
+}
+
+.informacion-principal h3 {
+
+    color: #d8cbb8;
+
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+.informacion-principal p {
+
+    color: #cccccc;
+
+    line-height: 1.6;
+
+}
+
+.informacion-principal ul {
+
+    color: #cccccc;
+
+    line-height: 1.8;
+
+    padding-left: 22px;
+
+}
+
+
+/* DATOS */
+
+.datos h2 {
+
+    color: #d8cbb8;
+
+    margin-top: 0;
+
+}
+
+.dato {
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background-color: #292929;
+
+    border-radius: 10px;
+}
+
+.dato h3 {
+
+    margin-top: 0;
+
+    color: #d8cbb8;
+
+    font-size: 17px;
+
+}
+
+.dato p {
+
+    margin-bottom: 0;
+
+    color: #cccccc;
+
+    line-height: 1.5;
+
+}
+
+
+/* AVISO */
+
+.aviso {
+
+    margin-top: 40px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #888888;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .contenedor-informacion {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .informacion-contaminacion {
+
+        padding: 25px;
+
+    }
+
+    .informacion-principal {
+
+        min-height: auto;
+
+    }
+
+}
+
+</style>
+
+
+<body>
+
+
+<header>
+
+    <div class="navegacion">
+
+      <a href="acciones.html"> Participación </a>    
+<a href="importancia.html"> Importancia </a>
+<a href="actualidad.html"> Actualidad </a>
+<a href="ubicacion.html"> Ubicación </a>
+<a href="informacion.html"> Información </a>
+<a href="index.html"> Inicio </a>
+
+    </div>
+
+</header>
+
+
+<section class="informacion-contaminacion">
+
+    <h1>Contaminación del agua</h1>
+
+    <p class="descripcion">
+        Conoce algunos de los elementos que pueden contaminar el agua
+        y los efectos que pueden provocar en el ambiente.
+    </p>
+
+
+    <div class="contenedor-informacion">
+
+
+        <!-- OPCIONES -->
+
+        <div class="opciones">
+
+            <h2>Selecciona un elemento</h2>
+
+            <select id="contaminante">
+
+                <option value="medicamentos">
+                     Medicamentos
+                </option>
+
+                <option value="detergente">
+                     Detergentes
+                </option>
+
+                <option value="aceite">
+                    ️ Aceite
+                </option>
+
+                <option value="fecales">
+                     Desechos fecales
+                </option>
+
+                <option value="quimicos">
+                     Sustancias químicas
+                </option>
+
+                <option value="residuos">
+                    ️ Residuos sólidos
+                </option>
+
+                <option value="fertilizantes">
+                     Fertilizantes
+                </option>
+
+                <option value="pesticidas">
+                     Pesticidas
+                </option>
+
+                <option value="industriales">
+                     Descargas industriales
+                </option>
+
+                <option value="plasticos">
+                     Plásticos y microplásticos
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- INFORMACIÓN CENTRAL -->
+
+        <div class="informacion-principal">
+
+            <h2 id="titulo">
+                Medicamentos
+            </h2>
+
+
+            <h3>¿Qué son?</h3>
+
+            <p id="descripcion-elemento">
+                Los medicamentos son sustancias utilizadas para prevenir,
+                tratar o controlar enfermedades. Después de ser utilizados,
+                algunos de sus componentes pueden llegar a las aguas
+                residuales y posteriormente incorporarse al ambiente.
+            </p>
+
+
+            <h3>Tipos o ejemplos</h3>
+
+            <p id="tipos">
+                Entre los residuos que pueden encontrarse están antibióticos,
+                analgésicos, hormonas y otros productos farmacéuticos.
+                Cada uno puede tener diferentes características y efectos
+                sobre los organismos acuáticos.
+            </p>
+
+
+            <h3>¿Qué sucede cuando llega al agua?</h3>
+
+            <p id="que-sucede">
+                Cuando estas sustancias llegan a un cuerpo de agua, pueden
+                permanecer disueltas o incorporarse a los sedimentos.
+                Dependiendo de la sustancia, su concentración y las
+                condiciones del ambiente, pueden afectar a diferentes
+                organismos.
+            </p>
+
+
+            <h3>Principales efectos</h3>
+
+            <ul id="efectos">
+
+                <li>Alteraciones en organismos acuáticos.</li>
+
+                <li>Presencia de sustancias farmacéuticas en el ambiente.</li>
+
+                <li>Alteraciones en el equilibrio de los ecosistemas.</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- DATOS -->
+
+        <div class="datos">
+
+            <h2>Datos interesantes</h2>
+
+
+            <div class="dato">
+
+                <h3> Impacto ambiental</h3>
+
+                <p id="dato-impacto">
+                    Algunos residuos de medicamentos pueden permanecer
+                    en los cuerpos de agua y entrar en contacto con
+                    organismos acuáticos.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <h3> ¿Cómo llega al agua?</h3>
+
+                <p id="dato-origen">
+                    Puede llegar mediante el desecho incorrecto de
+                    medicamentos o a través de aguas residuales.
+                </p>
+
+            </div>
+
+
+            <div class="dato">
+
+                <h3> Importancia</h3>
+
+                <p id="dato-importancia">
+                    Evitar desechar medicamentos en el drenaje ayuda
+                    a disminuir la entrada de estas sustancias al
+                    ambiente.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+ 
+
+</section>
+
+
+<script>
+
+// Información de los elementos contaminantes
+
+const contaminantes = {
+
+    medicamentos: {
+
+        titulo: "Medicamentos",
+
+        descripcion:
+            "Los medicamentos son sustancias utilizadas para prevenir, tratar o controlar enfermedades. Después de ser utilizados, algunos de sus componentes pueden llegar a las aguas residuales y posteriormente incorporarse al ambiente.",
+
+        tipos:
+            "Entre los residuos que pueden encontrarse están antibióticos, analgésicos, hormonas y otros productos farmacéuticos. Cada uno puede tener diferentes características y efectos sobre los organismos acuáticos.",
+
+        queSucede:
+            "Cuando estas sustancias llegan a un cuerpo de agua, pueden permanecer disueltas o incorporarse a los sedimentos. Dependiendo de la sustancia, su concentración y las condiciones del ambiente, pueden afectar a diferentes organismos.",
+
+        efectos: [
+            "Alteraciones en organismos acuáticos.",
+            "Presencia de sustancias farmacéuticas en el ambiente.",
+            "Alteraciones en el equilibrio de los ecosistemas."
+        ],
+
+        impacto:
+            "Algunos residuos de medicamentos pueden permanecer en los cuerpos de agua y entrar en contacto con organismos acuáticos.",
+
+        origen:
+            "Puede llegar mediante el desecho incorrecto de medicamentos o a través de aguas residuales.",
+
+        importancia:
+            "Evitar desechar medicamentos en el drenaje ayuda a disminuir la entrada de estas sustancias al ambiente."
+
+    },
+
+
+    detergente: {
+
+        titulo: "Detergentes",
+
+        descripcion:
+            "Los detergentes son productos utilizados principalmente para limpiar y eliminar suciedad. Después de su uso, sus componentes pueden incorporarse a las aguas residuales y llegar a cuerpos de agua.",
+
+        tipos:
+            "Existen detergentes para ropa, vajilla, superficies y otros usos. Pueden contener sustancias como tensioactivos, fragancias y diferentes compuestos destinados a mejorar su capacidad de limpieza.",
+
+        queSucede:
+            "Cuando llegan al agua, algunos de sus componentes pueden modificar sus propiedades y afectar las condiciones en las que viven los organismos acuáticos.",
+
+        efectos: [
+            "Formación de espuma en el agua.",
+            "Alteración de las propiedades del agua.",
+            "Afectación de organismos acuáticos."
+        ],
+
+        impacto:
+            "Algunos componentes de los detergentes pueden modificar las condiciones naturales de los cuerpos de agua.",
+
+        origen:
+            "Principalmente mediante aguas residuales provenientes de actividades domésticas y de limpieza.",
+
+        importancia:
+            "El uso responsable de detergentes puede ayudar a reducir la cantidad de sustancias que llegan al agua."
+
+    },
+
+
+    aceite: {
+
+        titulo: "Aceite",
+
+        descripcion:
+            "El aceite es una sustancia utilizada en actividades domésticas, automotrices e industriales. Cuando se desecha incorrectamente, puede llegar al sistema de drenaje o directamente al ambiente.",
+
+        tipos:
+            "Entre los principales ejemplos se encuentran el aceite de cocina, aceites utilizados en motores y otros aceites empleados en procesos industriales.",
+
+        queSucede:
+            "Cuando el aceite llega al agua puede extenderse sobre su superficie y formar una película que dificulta el intercambio de gases entre el agua y la atmósfera.",
+
+        efectos: [
+            "Puede formar una película sobre la superficie.",
+            "Puede dificultar el intercambio de oxígeno.",
+            "Puede afectar a organismos acuáticos."
+        ],
+
+        impacto:
+            "Una pequeña cantidad de aceite puede extenderse sobre una superficie de agua y afectar sus condiciones ambientales.",
+
+        origen:
+            "Puede provenir de actividades domésticas, automóviles, talleres y procesos industriales.",
+
+        importancia:
+            "Recolectar correctamente el aceite usado evita que llegue al sistema de drenaje y posteriormente a los cuerpos de agua."
+
+    },
+
+
+    fecales: {
+
+        titulo: "Desechos fecales",
+
+        descripcion:
+            "Los desechos fecales son residuos provenientes de las heces humanas o animales. Cuando llegan al agua sin un tratamiento adecuado, pueden convertirse en una fuente importante de contaminación microbiológica.",
+
+        tipos:
+            "La contaminación fecal puede provenir de aguas residuales domésticas, desechos de animales y sistemas de drenaje que presentan fugas o descargas sin tratamiento.",
+
+        queSucede:
+            "Cuando los desechos fecales llegan al agua pueden introducir microorganismos que alteran su calidad sanitaria y representan un riesgo cuando el agua entra en contacto con las personas.",
+
+        efectos: [
+            "Presencia de microorganismos patógenos.",
+            "Riesgo de enfermedades.",
+            "Disminución de la calidad sanitaria del agua."
+        ],
+
+        impacto:
+            "La contaminación fecal puede introducir bacterias, virus y otros microorganismos que representan un riesgo para la salud.",
+
+        origen:
+            "Puede provenir de aguas residuales domésticas, fugas del drenaje y descargas sin tratamiento adecuado.",
+
+        importancia:
+            "El tratamiento adecuado de las aguas residuales es importante para disminuir los riesgos asociados con este tipo de contaminación."
+
+    },
+
+
+    quimicos: {
+
+        titulo: "Sustancias químicas",
+
+        descripcion:
+            "Las sustancias químicas pueden encontrarse en diferentes productos y procesos. Cuando son liberadas de manera inadecuada, algunas pueden llegar a ríos, lagos y otros cuerpos de agua.",
+
+        tipos:
+            "Existen diferentes tipos de contaminantes químicos, entre ellos algunos solventes, ácidos, sustancias utilizadas en procesos industriales y determinados compuestos presentes en productos domésticos.",
+
+        queSucede:
+            "Al entrar en contacto con el agua, algunas sustancias pueden disolverse, reaccionar con otros componentes o permanecer en los sedimentos.",
+
+        efectos: [
+            "Alteración de las propiedades del agua.",
+            "Afectación de organismos acuáticos.",
+            "Contaminación de ecosistemas."
+        ],
+
+        impacto:
+            "Dependiendo de la sustancia, los contaminantes químicos pueden permanecer en el ambiente durante diferentes periodos.",
+
+        origen:
+            "Pueden provenir de industrias, productos domésticos, actividades agrícolas y otras actividades humanas.",
+
+        importancia:
+            "El manejo y tratamiento adecuado de sustancias químicas ayuda a disminuir su llegada a los cuerpos de agua."
+
+    },
+
+
+    residuos: {
+
+        titulo: "Residuos sólidos",
+
+        descripcion:
+            "Los residuos sólidos son materiales que las personas desechan después de utilizarlos. Cuando no se manejan correctamente, pueden terminar en calles, drenajes, ríos y otros cuerpos de agua.",
+
+        tipos:
+            "Entre ellos se encuentran envases, bolsas, latas, papel, vidrio, restos de productos y otros materiales que pueden ser reutilizados, reciclados o desechados.",
+
+        queSucede:
+            "Los residuos pueden acumularse en el agua y en sus alrededores. Con el tiempo, algunos materiales pueden fragmentarse en partes cada vez más pequeñas.",
+
+        efectos: [
+            "Deterioro visual de los cuerpos de agua.",
+            "Afectación de animales acuáticos.",
+            "Acumulación de basura en el ambiente."
+        ],
+
+        impacto:
+            "Los residuos pueden permanecer durante largos periodos en el ambiente y algunos pueden fragmentarse en partículas más pequeñas.",
+
+        origen:
+            "Pueden provenir de actividades domésticas, comerciales, industriales y de una disposición incorrecta de la basura.",
+
+        importancia:
+            "La separación, reducción y correcta disposición de los residuos ayuda a prevenir que lleguen a los cuerpos de agua."
+
+    },
+
+
+    fertilizantes: {
+
+        titulo: "Fertilizantes",
+
+        descripcion:
+            "Los fertilizantes son productos utilizados para proporcionar nutrientes a las plantas y mejorar el crecimiento de los cultivos. Sin embargo, una parte de estos nutrientes puede ser arrastrada por el agua de lluvia.",
+
+        tipos:
+            "Existen fertilizantes que aportan diferentes nutrientes, como nitrógeno, fósforo y potasio. Su composición depende del tipo de cultivo y de las necesidades del suelo.",
+
+        queSucede:
+            "Cuando el exceso de nutrientes llega a los cuerpos de agua, puede favorecer un crecimiento excesivo de algas y modificar las condiciones naturales del ecosistema.",
+
+        efectos: [
+            "Aumento de nutrientes en el agua.",
+            "Crecimiento excesivo de algas.",
+            "Alteración de los ecosistemas acuáticos."
+        ],
+
+        impacto:
+            "El exceso de nutrientes puede favorecer procesos como la eutrofización en determinados cuerpos de agua.",
+
+        origen:
+            "Principalmente de terrenos agrícolas cuando los nutrientes son arrastrados por el agua de lluvia.",
+
+        importancia:
+            "El uso adecuado de fertilizantes puede ayudar a disminuir el exceso de nutrientes que llega a ríos y lagos."
+
+    },
+
+
+    pesticidas: {
+
+        titulo: "Pesticidas",
+
+        descripcion:
+            "Los pesticidas son productos utilizados para controlar organismos que pueden afectar a los cultivos. Su uso inadecuado puede favorecer que algunas de estas sustancias lleguen al agua.",
+
+        tipos:
+            "Existen insecticidas para controlar insectos, herbicidas para controlar plantas no deseadas, fungicidas contra hongos y otros productos destinados al control de diferentes organismos.",
+
+        queSucede:
+            "La lluvia puede arrastrar residuos de pesticidas desde las zonas donde fueron aplicados hacia arroyos, ríos, lagos u otros cuerpos de agua.",
+
+        efectos: [
+            "Afectación de organismos acuáticos.",
+            "Alteración de los ecosistemas.",
+            "Presencia de sustancias químicas en el agua."
+        ],
+
+        impacto:
+            "Algunos pesticidas pueden permanecer en el ambiente y afectar organismos que no eran el objetivo de su aplicación.",
+
+        origen:
+            "Principalmente de actividades agrícolas y del uso inadecuado de productos para el control de plagas.",
+
+        importancia:
+            "La aplicación responsable y el manejo adecuado de estos productos ayuda a disminuir su llegada al agua."
+
+    },
+
+
+    industriales: {
+
+        titulo: "Descargas industriales",
+
+        descripcion:
+            "Las descargas industriales son aguas residuales generadas durante diferentes procesos de producción. Dependiendo de la actividad, pueden contener diferentes materiales y sustancias.",
+
+        tipos:
+            "Las características de estas descargas dependen del tipo de industria. Pueden estar relacionadas con procesos de fabricación, limpieza, transformación de materiales o diferentes actividades productivas.",
+
+        queSucede:
+            "Si las aguas residuales no reciben un tratamiento adecuado antes de ser descargadas, pueden modificar las condiciones del cuerpo de agua que las recibe.",
+
+        efectos: [
+            "Alteración de la calidad del agua.",
+            "Afectación de organismos acuáticos.",
+            "Deterioro de ecosistemas."
+        ],
+
+        impacto:
+            "El tipo de impacto depende de las sustancias presentes en las aguas residuales y de la cantidad que sea liberada.",
+
+        origen:
+            "Pueden provenir de diferentes procesos industriales y del manejo inadecuado de aguas residuales.",
+
+        importancia:
+            "El tratamiento y control de las descargas industriales es importante para disminuir su impacto ambiental."
+
+    },
+
+
+    plasticos: {
+
+        titulo: "Plásticos y microplásticos",
+
+        descripcion:
+            "Los plásticos son materiales ampliamente utilizados para fabricar envases, productos y diferentes objetos. Cuando son desechados incorrectamente pueden llegar a ríos y otros cuerpos de agua.",
+
+        tipos:
+            "Existen diferentes tipos de plásticos utilizados en envases, bolsas, botellas y otros productos. Cuando estos materiales se fragmentan pueden producir partículas conocidas como microplásticos.",
+
+        queSucede:
+            "Con el paso del tiempo, algunos residuos plásticos pueden fragmentarse debido a factores ambientales. Estas partículas pueden permanecer en el agua y ser ingeridas por diferentes organismos.",
+
+        efectos: [
+            "Afectación de animales acuáticos.",
+            "Acumulación de residuos.",
+            "Formación de partículas pequeñas conocidas como microplásticos."
+        ],
+
+        impacto:
+            "Los plásticos pueden fragmentarse con el tiempo y convertirse en partículas más pequeñas que permanecen en el ambiente.",
+
+        origen:
+            "Pueden provenir de residuos domésticos, comerciales, industriales y de productos que contienen materiales plásticos.",
+
+        importancia:
+            "Reducir el consumo de plásticos de un solo uso y disponer correctamente los residuos ayuda a prevenir su llegada al agua."
+
+    }
+
+};
+
+
+// Obtener elementos HTML
+
+const seleccion =
+    document.getElementById("contaminante");
+
+const titulo =
+    document.getElementById("titulo");
+
+const descripcion =
+    document.getElementById("descripcion-elemento");
+
+const tipos =
+    document.getElementById("tipos");
+
+const queSucede =
+    document.getElementById("que-sucede");
+
+const efectos =
+    document.getElementById("efectos");
+
+const datoImpacto =
+    document.getElementById("dato-impacto");
+
+const datoOrigen =
+    document.getElementById("dato-origen");
+
+const datoImportancia =
+    document.getElementById("dato-importancia");
+
+
+// Cambiar información cuando el usuario selecciona un elemento
+
+seleccion.addEventListener("change", function() {
+
+    const tipo =
+        seleccion.value;
+
+    const informacion =
+        contaminantes[tipo];
+
+
+    // Cambiar título
+
+    titulo.textContent =
+        informacion.titulo;
+
+
+    // Cambiar descripción
+
+    descripcion.textContent =
+        informacion.descripcion;
+
+
+    // Cambiar tipos o ejemplos
+
+    tipos.textContent =
+        informacion.tipos;
+
+
+    // Cambiar información sobre lo que sucede en el agua
+
+    queSucede.textContent =
+        informacion.queSucede;
+
+
+    // Limpiar lista anterior
+
+    efectos.innerHTML = "";
+
+
+    // Agregar nuevos efectos
+
+    informacion.efectos.forEach(function(efecto) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent =
+            efecto;
+
+        efectos.appendChild(li);
+
+    });
+
+
+    // Cambiar datos de la derecha
+
+    datoImpacto.textContent =
+        informacion.impacto;
+
+    datoOrigen.textContent =
+        informacion.origen;
+
+    datoImportancia.textContent =
+        informacion.importancia;
+
+});
+
+</script>
+
+
+</body>
+</html>
