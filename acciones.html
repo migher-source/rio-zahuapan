@@ -24,16 +24,19 @@ body {
 }
 
 .navegacion {
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
     background-color: black;
 }
 
 .navegacion a {
-    float: right;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    white-space: nowrap;
     transition: background-color 0.3s;
 }
 
@@ -43,9 +46,10 @@ body {
 }
 
 .boton-tema {
-    float: left;
+    margin-right: auto;
     padding: 10px 14px;
-    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border: none;
     border-radius: 5px;
     background-color: #6B6255;
@@ -119,22 +123,9 @@ body.claro .infografia {
 }
 
 @media screen and (max-width: 768px) {
-    .navegacion {
-        overflow: hidden;
-    }
-
     .navegacion a {
-        float: right;
-        display: block;
-        width: auto;
         padding: 12px 10px;
         font-size: 14px;
-    }
-
-    .boton-tema {
-        float: left;
-        display: block;
-        margin: 5px;
     }
 }
 
@@ -144,16 +135,11 @@ body.claro .infografia {
     }
 
     .navegacion a {
-        float: right;
-        display: block;
-        width: auto;
         padding: 12px 8px;
         font-size: 12px;
     }
 
     .boton-tema {
-        float: left;
-        display: block;
         margin: 5px;
         font-size: 19px;
     }
