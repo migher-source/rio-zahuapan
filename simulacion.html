@@ -245,7 +245,7 @@ body.claro .aviso {
     color: #555;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     .contenedor-informacion {
         grid-template-columns: 1fr;
     }
@@ -259,17 +259,39 @@ body.claro .aviso {
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    .navegacion {
+        overflow: hidden;
+    }
+
     .navegacion a {
-        float: none;
+        float: right;
         display: block;
-        text-align: center;
+        width: auto;
+        padding: 12px 10px;
+        font-size: 14px;
     }
 
     .boton-tema {
-        float: none;
+        float: left;
         display: block;
-        margin: 8px auto;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navegacion a {
+        float: right;
+        display: block;
+        width: auto;
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    .boton-tema {
+        float: left;
+        display: block;
+        margin: 5px;
     }
 
     .informacion-contaminacion {
