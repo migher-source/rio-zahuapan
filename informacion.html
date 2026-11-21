@@ -1,79 +1,230 @@
-<html>
-
-
-
-
-<style>
-
-
-body{
-
-
-p{
-
-text-align: justify;
-
-}
-
-
-padding: 20px;
-color: white;
-background-color: black;
-margin: 0;
-font-family: arial, helvetica, sans-serif;
-
-
-}
-
-.navegacion{
-overflow: hidden;
-background-color: black;
-
-}
-
-
-
-.navegacion a{
-
-float: right;
-color: white;
-text-align: center;
-padding: 14px 16px; 
-text-decoration: none;
-
-
-}
-
-
-
-.navegacion a:hover{
-
-background-color: #6B6255;
-
-}
-
-
-.cuadro{
-
-box-shadow: 0 0 10px gray;
-border-radius: 40px;
-padding: 30px;
-margin: 30px;
-
-}
-
-
-</style>
-
-
-
-
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
 
-<title> Río Zahuapan </title>
+<title>Río Zahuapan</title>
 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    padding: 20px;
+    color: white;
+    background-color: black;
+    margin: 0;
+    font-family: arial, helvetica, sans-serif;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+body.claro {
+
+    color: #222222;
+    background-color: #F1F1E9;
+
+}
+
+p {
+
+    text-align: justify;
+
+}
+
+.navegacion {
+
+    overflow: hidden;
+    background-color: black;
+    transition: background-color 0.3s ease;
+
+}
+
+body.claro .navegacion {
+
+    background-color: #D9E5D7;
+
+}
+
+.navegacion a {
+
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+
+}
+
+body.claro .navegacion a {
+
+    color: #263D30;
+
+}
+
+.navegacion a:hover {
+
+    background-color: #6B6255;
+
+}
+
+.navegacion a.activo {
+
+    background-color: #6B6255;
+    border-bottom: 3px solid white;
+
+}
+
+#cambiar-tema {
+
+    float: left;
+    margin: 5px;
+    padding: 7px 12px;
+
+    font-size: 21px;
+    cursor: pointer;
+
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease;
+
+}
+
+#cambiar-tema:hover {
+
+    background-color: #6B6255;
+
+}
+
+.cuadro {
+
+    box-shadow: 0 0 10px gray;
+    border-radius: 40px;
+    padding: 30px;
+    margin: 30px;
+
+    transition: box-shadow 0.3s ease,
+                background-color 0.3s ease;
+
+}
+
+body.claro .cuadro {
+
+    background-color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.18);
+
+}
+
+.cuadro:hover {
+
+    box-shadow: 0 0 15px #6B6255;
+
+}
+
+h1 {
+
+    text-align: center;
+    color: #00BFFF;
+
+}
+
+body.claro h1 {
+
+    color: #167B9C;
+
+}
+
+li {
+
+    margin-bottom: 12px;
+    text-align: justify;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .cuadro {
+
+        margin: 20px 10px;
+        padding: 25px;
+
+    }
+
+    .navegacion a {
+
+        padding: 12px 10px;
+        font-size: 14px;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+    .navegacion a {
+
+        padding: 12px 8px;
+        font-size: 12px;
+
+    }
+
+    #cambiar-tema {
+
+        font-size: 19px;
+
+    }
+
+    .cuadro {
+
+        margin: 20px 0;
+        padding: 18px;
+        border-radius: 20px;
+
+    }
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+    p, li {
+
+        font-size: 14px;
+        line-height: 1.6;
+
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cuadro, .navegacion a, body {
+
+        transition: none;
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -81,30 +232,33 @@ margin: 30px;
 
 <header>
 
-
 <div class="navegacion">
 
-<a href="acciones.html"> Participación </a>  
-<a href="simulacion.html"> Contaminantes </a>  
+<button id="cambiar-tema" onclick="cambiarTema()" aria-label="Activar modo claro">🌞</button>
+
+<a href="acciones.html"> Participación </a>
+
+<a href="simulacion.html"> Contaminantes </a>
+
 <a href="importancia.html"> Importancia </a>
+
 <a href="actualidad.html"> Actualidad </a>
+
 <a href="ubicacion.html"> Ubicación </a>
+
 <a href="index.html"> Inicio </a>
 
 </div>
 
-
 </header>
 
 
-
-<font color="#00BFFF"><center><h1> Información sobre el Río Zahuapan </h1></center></font>
-
-
+<center>
+<h1>Información sobre el Río Zahuapan</h1>
+</center>
 
 
 <div class="cuadro">
-
 
 <p>
 El Río Zahuapan es uno de los ríos más importantes del estado de Tlaxcala. Nace en el municipio de Tlaxco, al norte del estado, y recorre gran parte del territorio tlaxcalteca de norte a sur. Durante su recorrido pasa por diferentes municipios hasta unirse con el Río Atoyac en la zona sur de Tlaxcala.
@@ -119,6 +273,7 @@ Entre los municipios por los que pasa o con los que se relaciona su recorrido se
 <b>Datos curiosos</b>
 
 <ul>
+
 <li>Su origen está en el norte de Tlaxcala: nace en el municipio de Tlaxco y desde ahí comienza su recorrido hacia el sur del estado.</li>
 
 <li>Es un afluente importante del Río Atoyac: ambos ríos se unen en el sur de Tlaxcala, por lo que la conservación del Zahuapan también influye en las condiciones ambientales del Atoyac.</li>
@@ -132,24 +287,77 @@ Entre los municipios por los que pasa o con los que se relaciona su recorrido se
 <li>Su recuperación forma parte de un proyecto ambiental más amplio: las acciones de limpieza y saneamiento del Zahuapan contribuyen a los esfuerzos para recuperar la cuenca del Alto Atoyac.</li>
 
 <li>Tiene una longitud aproximada de 97 km: su recorrido y su subcuenca son importantes para la organización y el estudio de los recursos hídricos de Tlaxcala.</li>
+
 </ul>
 
-</class>
+</div>
+
+
+<script>
+
+function aplicarTema(tema) {
+
+    let boton = document.getElementById("cambiar-tema");
+
+    if (tema === "claro") {
+
+        document.body.classList.add("claro");
+        boton.textContent = "🌙";
+        boton.setAttribute("aria-label", "Activar modo oscuro");
+
+    } else {
+
+        document.body.classList.remove("claro");
+        boton.textContent = "🌞";
+        boton.setAttribute("aria-label", "Activar modo claro");
+
+    }
+
+    try {
+        localStorage.setItem("tema-zahuapan", tema);
+    } catch (error) {
+    }
+
+}
+
+function cambiarTema() {
+
+    let temaActual = document.body.classList.contains("claro") ? "claro" : "oscuro";
+
+    aplicarTema(temaActual === "claro" ? "oscuro" : "claro");
+
+}
+
+let temaGuardado = "oscuro";
+
+try {
+    temaGuardado = localStorage.getItem("tema-zahuapan") || "oscuro";
+} catch (error) {
+}
+
+aplicarTema(temaGuardado);
 
 
 
+
+let pagina = window.location.pathname.split("/").pop();
+
+let enlaces = document.querySelectorAll(".navegacion a");
+
+enlaces.forEach(function(enlace) {
+
+    if (enlace.getAttribute("href") === pagina) {
+
+        enlace.classList.add("activo");
+
+        enlace.setAttribute("aria-current", "page");
+
+    }
+
+});
+
+</script>
 
 </body>
 
-
-
 </html>
-
-
-
-
-
-
-
-
-
