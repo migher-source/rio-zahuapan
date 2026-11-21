@@ -165,7 +165,7 @@ body.claro .infografia {
 
         <button class="boton-tema" onclick="cambiarTema()" id="botonTema">🌞</button>
 
-        <a href="acciones.html" class="activo">Participación</a>
+        <a href="acciones.html">Participación</a>
         <a href="simulacion.html">Contaminantes</a>
         <a href="importancia.html">Importancia</a>
         <a href="actualidad.html">Actualidad</a>
@@ -194,29 +194,22 @@ function cambiarTema() {
     document.getElementById("botonTema").textContent = temaClaro ? "🌙" : "🌞";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const temaGuardado = localStorage.getItem("tema-zahuapan");
-    const boton = document.getElementById("botonTema");
+const temaGuardado = localStorage.getItem("tema-zahuapan");
+const boton = document.getElementById("botonTema");
 
-    if (temaGuardado === "claro") {
-        document.body.classList.add("claro");
-        boton.textContent = "🌙";
-    } else {
-        document.body.classList.remove("claro");
-        boton.textContent = "🌞";
-    }
-});
+if (temaGuardado === "claro") {
+    document.body.classList.add("claro");
+    boton.textContent = "🌙";
+} else {
+    document.body.classList.remove("claro");
+    boton.textContent = "🌞";
+}
 
-document.addEventListener("DOMContentLoaded", function() {
-    const temaGuardado = localStorage.getItem("tema-zahuapan");
-    const boton = document.getElementById("botonTema");
+const paginaActual = window.location.pathname.split("/").pop();
 
-    if (temaGuardado === "claro") {
-        document.body.classList.add("claro");
-        boton.textContent = "🌞";
-    } else {
-        document.body.classList.remove("claro");
-        boton.textContent = "🌙";
+document.querySelectorAll(".navegacion a").forEach(enlace => {
+    if (enlace.getAttribute("href") === paginaActual) {
+        enlace.classList.add("activo");
     }
 });
 
