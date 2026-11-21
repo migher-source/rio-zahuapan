@@ -1,67 +1,188 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
 
+<title>Río Zahuapan</title>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
+* {
+    box-sizing: border-box;
+}
 
-body{
+body {
 
-padding: 20px;
-color: white;
-background-color: black;
-margin: 0;
-font-family: arial, helvetica, sans-serif;
+    padding: 20px;
+    color: white;
+    background-color: black;
+    margin: 0;
+    font-family: arial, helvetica, sans-serif;
 
+    transition: background-color 0.3s ease, color 0.3s ease;
 
 }
 
-.navegacion{
-overflow: hidden;
-background-color: black;
+body.claro {
+
+    color: #222222;
+    background-color: #F1F1E9;
 
 }
 
+.navegacion {
 
+    overflow: hidden;
+    background-color: black;
 
-.navegacion a{
-
-float: right;
-color: white;
-text-align: center;
-padding: 14px 16px; 
-text-decoration: none;
-
+    transition: background-color 0.3s ease;
 
 }
 
+body.claro .navegacion {
 
-
-.navegacion a:hover{
-
-background-color: #6B6255;
+    background-color: #D9E5D7;
 
 }
 
+.navegacion a {
 
-iframe{
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 
-margin: 10px;
+    transition: background-color 0.3s ease;
+
+}
+
+body.claro .navegacion a {
+
+    color: #263D30;
+
+}
+
+.navegacion a:hover {
+
+    background-color: #6B6255;
+
+}
+
+.navegacion a.activo {
+
+    background-color: #6B6255;
+    border-bottom: 3px solid white;
+
+}
+
+#cambiar-tema {
+
+    float: left;
+    margin: 5px;
+    padding: 7px 12px;
+
+    font-size: 21px;
+    cursor: pointer;
+
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease;
+
+}
+
+#cambiar-tema:hover {
+
+    background-color: #6B6255;
+
+}
+
+h1 {
+
+    color: #00BFFF;
+    text-align: center;
+
+}
+
+body.claro h1 {
+
+    color: #167B9C;
+
+}
+
+iframe {
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 550px;
+
+    margin: 10px auto;
+
+    border: 0;
+    border-radius: 12px;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .navegacion a {
+
+        padding: 12px 10px;
+        font-size: 14px;
+
+    }
+
+    iframe {
+
+        height: 450px;
+
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+    .navegacion a {
+
+        padding: 12px 8px;
+        font-size: 12px;
+
+    }
+
+    #cambiar-tema {
+
+        font-size: 19px;
+
+    }
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+    iframe {
+
+        height: 400px;
+        margin: 10px auto;
+
+    }
 
 }
 
 </style>
-
-
-
-
-
-<head>
-
-<title> Río Zahuapan </title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -69,47 +190,104 @@ margin: 10px;
 
 <header>
 
-
 <div class="navegacion">
 
-<a href="acciones.html"> Participación </a>  
-<a href="simulacion.html"> Contaminantes </a>  
+<button id="cambiar-tema" onclick="cambiarTema()" aria-label="Activar modo claro">🌞</button>
+
+<a href="acciones.html"> Participación </a>
+
+<a href="simulacion.html"> Contaminantes </a>
+
 <a href="importancia.html"> Importancia </a>
+
 <a href="actualidad.html"> Actualidad </a>
+
 <a href="informacion.html"> Información </a>
+
 <a href="index.html"> Inicio </a>
 
 </div>
 
-
 </header>
 
 
-
-<font color="#00BFFF"><center><h1> Ubicación del Río Zahuapan </h1></center></font>
+<h1>Ubicación del Río Zahuapan</h1>
 
 
 <br>
 <br>
 
 
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30148.29458617569!2d-98.27471706731092!3d19.17174165133388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc48e84708b9b%3A0xb058c7f3af908f1e!2sR%C3%ADo%20Zahuapan!5e0!3m2!1ses!2smx!4v1791942294385!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de ubicación del Río Zahuapan"></iframe>
 
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30148.29458617569!2d-98.27471706731092!3d19.17174165133388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc48e84708b9b%3A0xb058c7f3af908f1e!2sR%C3%ADo%20Zahuapan!5e0!3m2!1ses!2smx!4v1791942294385!5m2!1ses!2smx" width="100%" height="80%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<script>
+
+function aplicarTema(tema) {
+
+    let boton = document.getElementById("cambiar-tema");
+
+    if (tema === "claro") {
+
+        document.body.classList.add("claro");
+        boton.textContent = "🌙";
+        boton.setAttribute("aria-label", "Activar modo oscuro");
+
+    } else {
+
+        document.body.classList.remove("claro");
+        boton.textContent = "🌞";
+        boton.setAttribute("aria-label", "Activar modo claro");
+
+    }
+
+    try {
+
+        localStorage.setItem("tema-zahuapan", tema);
+
+    } catch (error) {
+    }
+
+}
+
+function cambiarTema() {
+
+    let temaActual = document.body.classList.contains("claro") ? "claro" : "oscuro";
+
+    aplicarTema(temaActual === "claro" ? "oscuro" : "claro");
+
+}
+
+let temaGuardado = "oscuro";
+
+try {
+
+    temaGuardado = localStorage.getItem("tema-zahuapan") || "oscuro";
+
+} catch (error) {
+}
+
+aplicarTema(temaGuardado);
 
 
+let pagina = window.location.pathname.split("/").pop();
+
+let enlaces = document.querySelectorAll(".navegacion a");
+
+enlaces.forEach(function(enlace) {
+
+    if (enlace.getAttribute("href") === pagina) {
+
+        enlace.classList.add("activo");
+
+        enlace.setAttribute("aria-current", "page");
+
+    }
+
+});
+
+</script>
 
 </body>
 
-
-
 </html>
-
-
-
-
-
-
-
-
-
