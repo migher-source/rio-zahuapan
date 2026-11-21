@@ -829,8 +829,7 @@ const contaminantes = {
 };
 
 
-// Obtener elementos HTML
-
+/
 const seleccion =
     document.getElementById("contaminante");
 
@@ -859,7 +858,7 @@ const datoImportancia =
     document.getElementById("dato-importancia");
 
 
-// Cambiar información cuando el usuario selecciona un elemento
+
 
 seleccion.addEventListener("change", function() {
 
@@ -870,36 +869,36 @@ seleccion.addEventListener("change", function() {
         contaminantes[tipo];
 
 
-    // Cambiar título
+    
 
     titulo.textContent =
         informacion.titulo;
 
 
-    // Cambiar descripción
+
 
     descripcion.textContent =
         informacion.descripcion;
 
 
-    // Cambiar tipos o ejemplos
+    
 
     tipos.textContent =
         informacion.tipos;
 
 
-    // Cambiar información sobre lo que sucede en el agua
+    
 
     queSucede.textContent =
         informacion.queSucede;
 
 
-    // Limpiar lista anterior
+    
 
     efectos.innerHTML = "";
 
 
-    // Agregar nuevos efectos
+    
 
     informacion.efectos.forEach(function(efecto) {
 
@@ -914,7 +913,7 @@ seleccion.addEventListener("change", function() {
     });
 
 
-    // Cambiar datos de la derecha
+
 
     datoImpacto.textContent =
         informacion.impacto;
@@ -939,6 +938,18 @@ function cambiarTema() {
     document.getElementById("botonTema").textContent = temaClaro ? "🌙" : "🌞";
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const temaGuardado = localStorage.getItem("tema-zahuapan");
+    const boton = document.getElementById("botonTema");
+
+    if (temaGuardado === "claro") {
+        document.body.classList.add("claro");
+        boton.textContent = "🌙";
+    } else {
+        document.body.classList.remove("claro");
+        boton.textContent = "🌞";
+    }
+});
 document.addEventListener("DOMContentLoaded", function() {
     const temaGuardado = localStorage.getItem("tema-zahuapan");
     const boton = document.getElementById("botonTema");
