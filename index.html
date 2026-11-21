@@ -1,159 +1,289 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
 
+<title>Río Zahuapan</title>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 
-body{
 
+* {
+    box-sizing: border-box;
+}
+
+body {
 
     background-image: url("rio_a.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-attachment: fixed;
 
-
-margin: 0;
-font-family: arial, helvetica, sans-serif;
-
-
-}
-
-.navegacion{
-overflow: hidden;
-background-color: black;
+    margin: 0;
+    font-family: arial, helvetica, sans-serif;
 
 }
 
 
 
-.navegacion a{
 
-float: right;
-color: white;
-text-align: center;
-padding: 14px 16px; 
-text-decoration: none;
+.navegacion {
 
+    overflow: hidden;
+    background-color: black;
+
+}
+
+.navegacion a {
+
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+
+}
+
+.navegacion a:hover {
+
+    background-color: #6B6255;
 
 }
 
 
 
-.navegacion a:hover{
 
-background-color: #6B6255;
+.navegacion a.activo {
+
+    background-color: #6B6255;
+    border-bottom: 3px solid white;
+
+}
+
+
+
+
+img {
+
+    display: block;
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 20px;
+
+    transition: transform 0.3s ease;
+
+}
+
+img:hover {
+
+    transform: scale(1.02);
 
 }
 
 
 
-img{
 
-width: 80%;
-height: auto;
-border-radius: 20px;
+table {
 
+    border-radius: 40px;
+    width: 40%;
+    height: 50%;
 
-}
+    margin: 0 auto;
 
+    background: rgba(255, 255, 255, 0.18);
 
-table{
-
-border-radius: 40px;
-width: 40%;
-height: 50%;
-justify-content: center;
-
-
-background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+
     border: 1px solid rgba(255, 255, 255, 0.35);
+
     border-radius: 20px;
     padding: 20px;
 
+}
+
+
+
+
+.centro {
+
+    text-align: center;
+
+}
+
+.centro a {
+
+    text-decoration: none;
 
 }
 
 
 
 
+table {
 
-.centro a{
+    animation: aparecer 0.8s ease;
 
-text-decoration: none;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
 }
 
 
 
+
+@media screen and (max-width: 768px) {
+
+    table {
+        width: 65%;
+    }
+
+    .navegacion a {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .navegacion a {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+
+    table {
+        width: 90%;
+        padding: 10px;
+    }
+
+    img {
+        width: 95%;
+    }
+
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    table, img, .navegacion a {
+        animation: none;
+        transition: none;
+    }
+
+}
 
 </style>
 
-
-
-
-
-<head>
-
-<title> Río Zahuapan </title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
+
 
 <body>
 
 <header>
 
-
 <div class="navegacion">
 
-<a href="acciones.html"> Participación </a>  
-<a href="simulacion.html"> Contaminantes </a>  
+<a href="acciones.html"> Participación </a>
+
+<a href="simulacion.html"> Contaminantes </a>
+
 <a href="importancia.html"> Importancia </a>
+
 <a href="actualidad.html"> Actualidad </a>
+
 <a href="ubicacion.html"> Ubicación </a>
+
 <a href="informacion.html"> Información </a>
 
 </div>
 
-
 </header>
-
 
 
 <br><br><br><br><br><br><br><br>
 
 
 <center>
+
 <table border="1">
 
-<tr> <td>
+<tr>
 
-<center> <div class="centro">
+<td>
 
+<div class="centro">
 
-<img src="logo.png">
+<img src="logo.png" alt="Logo del Río Zahuapan">
 
 <br>
 <br>
-<br> 
+<br>
 
-</div> </center>
+</div>
 
+</td>
 
+</tr>
 
-</td> </tr> </table>
+</table>
+
 </center>
+
+
+<script>
+
+
+
+let pagina = window.location.pathname.split("/").pop();
+
+let enlaces = document.querySelectorAll(".navegacion a");
+
+enlaces.forEach(function(enlace) {
+
+    if (enlace.getAttribute("href") === pagina) {
+
+        enlace.classList.add("activo");
+
+    }
+
+});
+
+</script>
+
 
 </body>
 
-
-
 </html>
-
