@@ -175,12 +175,25 @@ body.claro .boton-tema {
 function cambiarTema() {
     document.body.classList.toggle("claro");
 
-    let tema = document.body.classList.contains("claro") ? "claro" : "oscuro";
+    const temaClaro = document.body.classList.contains("claro");
 
-    localStorage.setItem("tema-zahuapan", tema);
+    localStorage.setItem("tema-zahuapan", temaClaro ? "claro" : "oscuro");
 
-    document.getElementById("botonTema").textContent = tema === "claro" ? "🌞" : "🌙";
+    document.getElementById("botonTema").textContent = temaClaro ? "🌙" : "🌞";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const temaGuardado = localStorage.getItem("tema-zahuapan");
+    const boton = document.getElementById("botonTema");
+
+    if (temaGuardado === "claro") {
+        document.body.classList.add("claro");
+        boton.textContent = "🌙";
+    } else {
+        document.body.classList.remove("claro");
+        boton.textContent = "🌞";
+    }
+});
 
 let temaGuardado = localStorage.getItem("tema-zahuapan");
 
