@@ -936,8 +936,21 @@ function cambiarTema() {
 
     localStorage.setItem("tema-zahuapan", temaClaro ? "claro" : "oscuro");
 
-    document.getElementById("botonTema").textContent = temaClaro ? "🌞" : "🌙";
+    document.getElementById("botonTema").textContent = temaClaro ? "🌙" : "🌞";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const temaGuardado = localStorage.getItem("tema-zahuapan");
+    const boton = document.getElementById("botonTema");
+
+    if (temaGuardado === "claro") {
+        document.body.classList.add("claro");
+        boton.textContent = "🌙";
+    } else {
+        document.body.classList.remove("claro");
+        boton.textContent = "🌞";
+    }
+});
 
 function cargarTema() {
     const temaGuardado = localStorage.getItem("tema-zahuapan");
